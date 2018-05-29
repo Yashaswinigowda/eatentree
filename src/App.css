@@ -1,0 +1,50 @@
+
+.foodView {
+   float: left;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: 300px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* For Mobile Phones */
+@media only screen and (max-width: 600px) {
+    .grid-container{
+        grid-gap: 20px;
+        grid-template-columns: auto;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .grid-container{
+      grid-gap: 20px;
+      grid-template-columns: auto auto;
+  }
+}
+
+/* For Mobile Galazy */
+
+  @media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .grid-container{
+        grid-gap: 20px;
+        grid-template-columns: auto auto auto;
+    }
+
+}
