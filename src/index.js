@@ -8,5 +8,13 @@ import App from './App';
 import routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
 
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Titillium Web:300,400,700', 'sans-serif']
+  }
+});
+
 ReactDOM.render(<Router history={browserHistory} routes={routes} />, document.getElementById('root'));
 registerServiceWorker();

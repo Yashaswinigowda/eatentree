@@ -31,31 +31,34 @@ class FoodPage extends React.Component {
         },
 
         (error) => {
-          isLoading: true,
-          error
+          this.setState({
+            isLoading: true,
+            error
+          });
         }
       )
   }
 
   selectedFood(val){
-    console.log(val);
     let selectedFood = this.state.foods[val];
     this.setState({isSelected:true, selectedFood:selectedFood});
   }
 
   backHandler(){
-    console.log('back');
     this.setState({isSelected:false});
   }
 
   render(){
       const { error, isLoading, foods, selectedFood } = this.state;
+
       if (error) {
-        return <div>Error: {error.message}</div>;
+        return <h2> Error: {error.message} </h2>;
       }
+
       else if (!isLoading) {
-        return <div>Loading...</div>;
+        return <h2> Loading...</h2>;
       }
+
       else if(!this.state.isSelected){
         return(
           foods.map((food, key) => {
@@ -72,6 +75,7 @@ class FoodPage extends React.Component {
           })
         );
       }
+
       else{
         return(
           <FoodDetails
@@ -80,8 +84,10 @@ class FoodPage extends React.Component {
             />
         )
       }
+
   }
 }
 
+// return <div style={{'width':'200px', 'height':'300px', 'border':'1px solid', 'box-shadow':'5px 5px #888888'}}> Error: {error.message} </div>;
 
 export default FoodPage;

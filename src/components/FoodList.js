@@ -1,12 +1,15 @@
 
 import React from 'react';
 import '../App.css';
+import {vegNonVeg} from './FoodIcons';
 
 const FoodList = ({ foods, indexValue, selectedFood })=> {
   return(
-    <div className='grid-item' onClick={() => selectedFood(indexValue)}>
-      <p> {foods.name} </p>
+    <div className='grid-item'>
       <img src={foods.image} alt='' width="200" className="img-responsive" height="200" />
+      <p> {foods.name} </p>
+      {vegNonVeg(foods.nonVeg, foods.spicy)}
+      <input type="button" value="View Details" style={{ 'backgroundColor':'#FF4500', 'fontFamily': ` 'Arvo', serif` }} onClick={() =>selectedFood(indexValue)}/>
     </div>
   );
 }
